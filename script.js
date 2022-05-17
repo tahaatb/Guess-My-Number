@@ -20,6 +20,7 @@ document.querySelector('.check').addEventListener('click', function () {
     if (score >= highscore) {
       highscore = score;
     }
+    document.querySelector('.number').textContent = `${rand}`;
   } else if (guess > rand) {
     document.querySelector('.message').textContent = 'Too high!';
     score = score - 1;
@@ -47,4 +48,5 @@ document.querySelector('.again').addEventListener('click', function () {
   score = 20;
   document.querySelector('.score').textContent = `${score}`;
   document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('.number').textContent = `?`;
 });
