@@ -11,16 +11,21 @@ document.querySelector('.check').addEventListener('click', function () {
   if (!guess) {
     document.querySelector('.message').textContent =
       'No number has been entered.';
-  }
-
-  if (guess === rand) {
+  } else if (guess === rand) {
     document.querySelector('.message').textContent = 'Correct!';
     document.querySelector('body').style.backgroundColor = '#48b555';
     if (score >= highscore) {
       highscore = score;
     }
-  } else {
+  } else if (guess > rand) {
+    document.querySelector('.message').textContent = 'Too high!';
     score = score - 1;
+    document.querySelector('.score').textContent = `${score}`;
+  } else if (guess < rand) {
+    document.querySelector('.message').textContent = 'Too low!';
+    score = score - 1;
+    document.querySelector('.score').textContent = `${score}`;
+  } else {
     if (score === 0) {
       document.querySelector('.message').textContent = 'Game Over!';
       document.querySelector('body').style.backgroundColor = '#a81414';
