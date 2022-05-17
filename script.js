@@ -24,10 +24,18 @@ document.querySelector('.check').addEventListener('click', function () {
   } else if (guess > rand) {
     document.querySelector('.message').textContent = 'Too high!';
     score = score - 1;
+    if (score === 0) {
+      document.querySelector('.message').textContent = 'Game Over!';
+      document.querySelector('body').style.backgroundColor = '#a81414';
+    }
     document.querySelector('.score').textContent = `${score}`;
   } else if (guess < rand) {
     document.querySelector('.message').textContent = 'Too low!';
     score = score - 1;
+    if (score === 0) {
+      document.querySelector('.message').textContent = 'Game Over!';
+      document.querySelector('body').style.backgroundColor = '#a81414';
+    }
     document.querySelector('.score').textContent = `${score}`;
   } else {
     if (score === 0) {
