@@ -11,6 +11,9 @@ document.querySelector('.check').addEventListener('click', function () {
   if (!guess) {
     document.querySelector('.message').textContent =
       'No number has been entered.';
+  } else if (guess > 20 || guess < 1) {
+    document.querySelector('.message').textContent =
+      'The number is not between 1 and 20.';
   } else if (guess === rand) {
     document.querySelector('.message').textContent = 'Correct!';
     document.querySelector('body').style.backgroundColor = '#48b555';
